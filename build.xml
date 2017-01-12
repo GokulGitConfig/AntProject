@@ -1,6 +1,7 @@
 <project name = "buildProj" default = "jarpakage">
 
-<!--<property file = "version.txt" name = "vers" />-->
+<!--<property file = "version.txt" name = "vers" 
+Version property not working//>-->
 <property name="version" value="1.0"/>
 <property name = "ant" value = "${ant.version}"/>
 <target name = "clean" >
