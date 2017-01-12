@@ -1,0 +1,31 @@
+<project name = "buildProj" default = "jarpakage">
+
+<!--<property file = "version.txt" name = "vers" />-->
+<property name="version" value="1.0"/>
+<property name = "ant" value = "${ant.version}"/>
+<target name = "clean" >
+	<delete dir = "Build/clases"/>
+	<delete dir = "Build/jar"/>
+	<delete dir = "./jar"/>
+	<echo>Clean up</echo>
+</target>
+
+<target name = "init" depends = "clean">
+	<echo>Initial step</echo>
+	<mkdir dir = "Build/clases"/>
+	<mkdir dir = "Build/jar"/>
+	</target>
+	
+<target name = "build" depends = "init">
+	<javac destdir = "Build/clases" srcdir = "src" includeantruntime = "true" />
+</target>
+
+<target name ="jarpakage" depends = "build">
+	<echo>Pakaging into jar file</echo>
+	<war basedir = "src" destfile ="./jar/app ${version}.war" needxmlfile = "false" />
+	<echo>ANT version  = ${ant}</echo>
+	<echo>ANT Proj Nmae  = ${ant.project.name}</echo>
+	
+</target>
+
+</project>
