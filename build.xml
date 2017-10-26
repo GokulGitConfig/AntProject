@@ -10,7 +10,6 @@ Version property not working//>-->
 	<delete dir = "./jar"/>
 	<echo>Clean up</echo>
 </target>
-
 <target name = "init" depends = "clean">
 	<echo>Initial step</echo>
 	<mkdir dir = "Build/clases"/>
